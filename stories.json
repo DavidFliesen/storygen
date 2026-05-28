@@ -339,5 +339,254 @@
         "scene": "Punchline ending."
       }
     ]
+  },
+  {
+    "id": "sos-0012",
+    "status": "unused",
+    "created_at": "2026-05-28T02:44:41.808873",
+    "title": "Sweet Tea Showdown",
+    "themes": [
+      "Southern humor",
+      "pets",
+      "Summerville pride"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear and Bootsie Belle sitting on the front porch of their Summerville home, a pitcher of sweet tea on the table.",
+        "dialogue": [
+          "Honey Bear: \"Bootsie Belle, I swear this sweet tea's so good, it'll charm the spots off a Yorkie.\"",
+          "Bootsie Belle: \"Well, Honey Bear, around here, even the Yorkies mind their manners 'cause of the tea.\""
+        ]
+      },
+      {
+        "panel": 2,
+        "scene": "Outside yard, their Yorkie growling at a tuxedo cat strolling by the fence.",
+        "dialogue": [
+          "Bootsie Belle (off-panel): \"Look at that Yorkie, actin' like he owns the place.\"",
+          "Honey Bear (off-panel): \"He\u2019s just tryin\u2019 to keep that tuxedo cat from stealin\u2019 our Summerville sweet tea secret.\""
+        ]
+      },
+      {
+        "panel": 3,
+        "scene": "The tuxedo cat jumps onto the porch railing, looking clever and calm.",
+        "dialogue": [
+          "Tuxedo Cat: \"Y\u2019all know sweet tea ain\u2019t just about the recipe, it\u2019s the Southern hospitality you can\u2019t bottle.\"",
+          "Honey Bear: \"Well, bless your fancy whiskers, maybe you got a point.\""
+        ]
+      },
+      {
+        "panel": 4,
+        "scene": "Honey Bear, Bootsie Belle, Yorkie, and tuxedo cat all sitting around the table, sharing sweet tea and smiling.",
+        "dialogue": [
+          "Bootsie Belle: \"Looks like y\u2019all just made a new sweet tea fan.\"",
+          "Honey Bear: \"Around here, we don\u2019t just share tea, honey, we share friendship.\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sos-0014",
+    "status": "unused",
+    "created_at": "2026-05-28T02:44:47.581777",
+    "title": "Sweet Tea Showdown",
+    "themes": [
+      "Southern humor",
+      "Pets",
+      "Summerville pride"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear sitting on the porch with a glass of sweet tea, Bootsie Belle nearby holding a Yorkie named Tiny.",
+        "dialogue": [
+          {
+            "character": "Honey Bear",
+            "line": "Ain't nothin' beats a cold glass o' sweet tea on a Summerville afternoon."
+          },
+          {
+            "character": "Bootsie Belle",
+            "line": "Especially when Tiny here is watchin' fer critters, protectin' our porch kingdom!"
+          }
+        ]
+      },
+      {
+        "panel": 2,
+        "scene": "Tiny growling at a tuxedo cat lounging on the fence.",
+        "dialogue": [
+          {
+            "character": "Tiny",
+            "line": "You moseyin' past my territory, buddy?"
+          },
+          {
+            "character": "Tuxedo Cat",
+            "line": "Now, now, no need for a ruckus. I\u2019m just admirin\u2019 the sweet tea breeze."
+          }
+        ]
+      },
+      {
+        "panel": 3,
+        "scene": "Bootsie Belle laughing while Honey Bear sips tea, Tiny still alert but less aggressive.",
+        "dialogue": [
+          {
+            "character": "Bootsie Belle",
+            "line": "Tiny\u2019s got more bark than bite, just like my daddy when he forgot the tea was sweet."
+          },
+          {
+            "character": "Honey Bear",
+            "line": "Bless his heart. Even the Yorkies know Summerville\u2019s sweet tea is sacred."
+          }
+        ]
+      },
+      {
+        "panel": 4,
+        "scene": "The tuxedo cat now sitting calmly next to Honey Bear, Tiny relaxed at their feet.",
+        "dialogue": [
+          {
+            "character": "Tuxedo Cat",
+            "line": "I reckon I\u2019ll stay 'round. Can\u2019t beat the hospitality... or the sweet tea."
+          },
+          {
+            "character": "Honey Bear",
+            "line": "Well, you\u2019re welcome anytime, as long as Tiny don\u2019t chase ya off!"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sos-0016",
+    "status": "unused",
+    "created_at": "2026-05-28T02:44:55.007695",
+    "title": "Sweet Tea Showdown",
+    "themes": [
+      "Southern hospitality",
+      "pets",
+      "Summerville pride",
+      "sassy humor"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear on her porch holding a glass of sweet tea, Bootsie Belle sitting beside her with a Yorkie barking at a tuxedo cat on the fence.",
+        "dialogue": [
+          "Honey Bear: \"Bless his heart, Bootsie Belle, that Yorkie's treatin' Mr. Whiskers like he\u2019s tryin\u2019 to steal the last sip of sweet tea!\"",
+          "Bootsie Belle: \"Well, Honey, around here, sweet tea's precious, and so\u2019s our patch of porch.\""
+        ]
+      },
+      {
+        "panel": 2,
+        "scene": "Close-up of Yorkie barking fiercely, Mr. Whiskers (the tuxedo cat) sitting dignified on the fence, licking his paw.",
+        "dialogue": [
+          "Honey Bear: \"That little Yorkie\u2019s got more fire than a summer barbecue.\"",
+          "Bootsie Belle: \"Mr. Whiskers just playin\u2019 it cool, like he owns the whole Summerville.\""
+        ]
+      },
+      {
+        "panel": 3,
+        "scene": "Honey Bear pouring another glass of sweet tea, smiling at the two.",
+        "dialogue": [
+          "Honey Bear: \"Well, darlin\u2019, whether it\u2019s a Yorkie barkin\u2019 or a tuxedo cat struttin\u2019, around here, sweet tea keeps us all sweeter.\"",
+          "Bootsie Belle: \"Amen to that, Honey Bear. Summerville\u2019s elixir, that\u2019s what it is!\""
+        ]
+      },
+      {
+        "panel": 4,
+        "scene": "Both pets sitting calmly now, sharing a bowl of water, Honey Bear and Bootsie Belle laughing on the porch as sun sets over Summerville.",
+        "dialogue": [
+          "Honey Bear: \"Looks like peace is finally pourin\u2019 out, just like our tea.\"",
+          "Bootsie Belle: \"Yessiree, only thing sweeter than our tea is this here friendship.\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sos-0018",
+    "status": "unused",
+    "created_at": "2026-05-28T02:45:04.794966",
+    "title": "Sweet Tea Showdown",
+    "themes": [
+      "Southern humor",
+      "Sisterly rivalry",
+      "Summerville charm"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear and Bootsie Belle sitting on the front porch with iced sweet tea glasses, a gentle Summerville breeze blowing.",
+        "dialogue": [
+          "Honey Bear: \"Bootsie, sugar, do you reckon this here sweet tea's got enough kick today?\"",
+          "Bootsie Belle: \"Honey, if it don\u2019t make you wanna two-step, it ain\u2019t sweet tea.\""
+        ]
+      },
+      {
+        "panel": 2,
+        "scene": "Bootsie Belle taking a big sip, smirking, while Honey Bear narrows her eyes playfully.",
+        "dialogue": [
+          "Bootsie Belle: \"Yessiree, this batch\u2019ll put hair on yer chest!\"",
+          "Honey Bear: \"Well, I ain\u2019t got no chest hair, and I\u2019m still standin\u2019!\""
+        ]
+      },
+      {
+        "panel": 3,
+        "scene": "Close-up of the two sipping, with Honey Bear whispering conspiratorially.",
+        "dialogue": [
+          "Honey Bear: \"Course, I done snuck in a lil\u2019 extra sweetness\u2014Summerville's secret weapon.\"",
+          "Bootsie Belle: \"You mean extra sugar? That\u2019d explain why my teeth\u2019re jumpin\u2019!\""
+        ]
+      },
+      {
+        "panel": 4,
+        "scene": "Both sisters laughing heartily as their cat, a tuxedo with a smart look, and a tiny Yorkie protectively guard the porch.",
+        "dialogue": [
+          "Honey Bear: \"Well, darlin\u2019, ain\u2019t nothin\u2019 sweeter than sisterly rivalry on a Summerville porch.\"",
+          "Bootsie Belle: \"Amen to that, Honey!\""
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sos-0020",
+    "status": "unused",
+    "created_at": "2026-05-28T02:45:13.502362",
+    "title": "Sweet Tea Showdown",
+    "themes": [
+      "Southern humor",
+      "friendship",
+      "Summerville culture",
+      "quirky pets"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear and Bootsie Belle sitting on a porch swing in Summerville, with a pitcher of sweet tea on the table.",
+        "dialogue": [
+          "Honey Bear: \"Bootsie Belle, I swear this batch of sweet tea tastes a mite different today.\"",
+          "Bootsie Belle: \"Well, Honey, maybe that new water from the well decided to get fancy on us.\""
+        ]
+      },
+      {
+        "panel": 2,
+        "scene": "Close-up of Honey Bear smelling the sweet tea skeptically while Bootsie Belle watches.",
+        "dialogue": [
+          "Honey Bear: \"Smells like somebody sneaked in a touch of mint. That's just plain disrespectful to Summerville's sweet tea legacy.\""
+        ]
+      },
+      {
+        "panel": 3,
+        "scene": "Their tuxedo cat, Mr. Whiskers, perched on the table, looking very serious; their Yorkie, Miss Peaches, barking and standing guard near a pitcher of sweet tea on the ground.",
+        "dialogue": [
+          "Bootsie Belle: \"Well, Mr. Whiskers here says mint\u2019s a \u2018refinement,\u2019 but Miss Peaches is guarding the classic stuff like it's the last biscuit at a church picnic.\""
+        ]
+      },
+      {
+        "panel": 4,
+        "scene": "Honey Bear and Bootsie Belle laughing together on the porch swing, Mr. Whiskers curled up on Honey Bear\u2019s lap, Miss Peaches still alert at their feet.",
+        "dialogue": [
+          "Honey Bear: \"Guess both kinds gonna stay right here in Summerville, keepin\u2019 our sweet tea traditions and our taste buds entertained.\"",
+          "Bootsie Belle: \"Amen to that, darlin\u2019. Ain\u2019t no sweeter tea than friendship and a little friendly fussin\u2019!\""
+        ]
+      }
+    ]
   }
 ]
