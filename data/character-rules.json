@@ -1,0 +1,22 @@
+{
+  "Honey Bear": {
+    "species": "Yorkshire Terrier",
+    "traits": [
+      "dramatic",
+      "protective",
+      "food obsessed",
+      "bossy",
+      "territorial"
+    ]
+  },
+  "Bootsie Belle": {
+    "species": "Tuxedo Cat",
+    "traits": [
+      "elegant",
+      "sarcastic",
+      "Southern belle",
+      "calm",
+      "witty"
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "panel_structure": {
+    "panel_1": "setup",
+    "panel_2": "escalation",
+    "panel_3": "complication",
+    "panel_4": "punchline"
+  }
+}
