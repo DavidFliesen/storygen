@@ -1,22 +1,22 @@
-name: Generate SoS Story Ideas
+name: Rebuild SoS FAISS Story Memory
 
 on:
   workflow_dispatch:
     inputs:
-      count:
-        description: "Number of new story ideas"
+      include_unused:
+        description: "Include unused story ideas in memory too?"
         required: true
-        default: "5"
-      similarity_threshold:
-        description: "Duplicate rejection threshold, lower is stricter"
-        required: true
-        default: "0.80"
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
 
 jobs:
-  generate:
+  memory:
     runs-on: ubuntu-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -33,16 +33,20 @@ jobs:
       - name: Install Dependencies
         run: pip install -r requirements.txt
 
-      - name: Generate Stories
+      - name: Build FAISS Story Memory
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python scripts/generate_stories.py             --count ${{ github.event.inputs.count }}             --similarity-threshold ${{ github.event.inputs.similarity_threshold }}
+          if [ "${{ github.event.inputs.include_unused }}" = "true" ]; then
+            python scripts/build_vector_store.py --include-unused
+          else
+            python scripts/build_vector_store.py
+          fi
 
-      - name: Commit Stories and Report
+      - name: Commit Vector Store
         run: |
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-          git add stories.json data/last-generation-report.json
-          git commit -m "Generate new SoS story ideas" || echo "No changes"
+          git add vector_store/stories.faiss vector_store/metadata.json
+          git commit -m "Rebuild SoS FAISS story memory" || echo "No changes"
           git push
