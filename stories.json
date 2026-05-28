@@ -1,0 +1,33 @@
+[
+  {
+    "id": "sos-0001",
+    "title": "The Citronella Fortress",
+    "status": "used",
+    "characters": [
+      "Honey Bear",
+      "Bootsie Belle"
+    ],
+    "themes": [
+      "mosquitoes",
+      "backyard"
+    ],
+    "panels": [
+      {
+        "panel": 1,
+        "scene": "Honey Bear builds a citronella candle fort in the backyard."
+      },
+      {
+        "panel": 2,
+        "scene": "Bootsie Belle calmly critiques the architecture."
+      },
+      {
+        "panel": 3,
+        "scene": "Mosquitoes hover dramatically outside."
+      },
+      {
+        "panel": 4,
+        "scene": "Honey Bear declares victory."
+      }
+    ]
+  }
+]

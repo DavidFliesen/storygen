@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #151515;
+  color: #f2f2f2;
+}
+
+header {
+  background: #2c1b47;
+  padding: 20px;
+  text-align: center;
+}
+
+.controls {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 16px;
+  border: none;
+  background: #6a3eb5;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.story-card {
+  background: #222;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.panel {
+  background: #333;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
