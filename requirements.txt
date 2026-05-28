@@ -1,4 +1,3 @@
 openai>=1.30.0
-langchain
-faiss-cpu
-numpy
+numpy>=1.26.0
+faiss-cpu>=1.8.0
