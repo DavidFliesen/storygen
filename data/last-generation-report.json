@@ -1,0 +1,68 @@
+{
+  "created_at": "2026-05-28T03:11:14.092229",
+  "requested_count": 10,
+  "approved_count": 7,
+  "attempts": 30,
+  "rejected": [
+    {
+      "reason": "generation_error: Expecting value: line 11 column 45 (char 554)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 795)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 14 column 45 (char 559)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 624)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 11 column 45 (char 701)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 725)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 637)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 610)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 11 column 45 (char 547)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 16 column 45 (char 728)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 11 column 45 (char 710)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 16 column 45 (char 866)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 16 column 45 (char 652)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 730)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 755)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 603)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 15 column 45 (char 781)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 11 column 45 (char 640)"
+    },
+    {
+      "reason": "generation_error: Expecting value: line 14 column 45 (char 670)"
+    }
+  ]
+}
