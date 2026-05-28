@@ -1,6 +1,20 @@
 [
   {
-    "id": "tuxedo-001",
-    "fact": "Tuxedo cats are often described as intelligent and social."
+    "id": "tux-001",
+    "topic": "cat confidence",
+    "fact": "Tuxedo cats are not a breed, but black and white cats are often popularly described as bold, social, and clever.",
+    "story_angle": "Bootsie Belle acts like a refined strategist who already predicted the chaos."
+  },
+  {
+    "id": "tux-002",
+    "topic": "independence",
+    "fact": "Cats are often independent, observant, and selective about when they participate.",
+    "story_angle": "Bootsie Belle refuses to join Honey Bear's panic unless the situation becomes interesting."
+  },
+  {
+    "id": "tux-003",
+    "topic": "dignity",
+    "fact": "Cats often create comedy by behaving as though ordinary household spaces belong to them.",
+    "story_angle": "Bootsie Belle claims furniture, baskets, and sunbeams as inherited estates."
   }
 ]

@@ -1,6 +1,20 @@
 [
   {
-    "id": "example-001",
-    "fact": "Summerville is known as the Birthplace of Sweet Tea."
+    "id": "sum-001",
+    "topic": "Birthplace of Sweet Tea",
+    "fact": "Summerville, South Carolina is widely associated with the title Birthplace of Sweet Tea.",
+    "story_angle": "Use sparingly because sweet tea can become repetitive."
+  },
+  {
+    "id": "sum-002",
+    "topic": "Flowertown",
+    "fact": "Summerville is known as Flowertown because of its azaleas, camellias, wisteria, and spring flowers.",
+    "story_angle": "Honey Bear mistakes a flower festival setup for an invasion of decorative shrubbery."
+  },
+  {
+    "id": "sum-003",
+    "topic": "porch culture",
+    "fact": "Summerville's historic homes, gardens, and porches give it a classic small-town Southern feel.",
+    "story_angle": "Bootsie Belle treats the porch like a formal receiving room while Honey Bear runs security."
   }
 ]

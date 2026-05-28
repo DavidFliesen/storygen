@@ -1,8 +1,31 @@
 {
+  "series_rules": [
+    "Use Honey Bear and Bootsie Belle as the central characters unless explicitly directed otherwise.",
+    "Do not invent replacement main pets such as Tiny, Mr. Whiskers, Miss Peaches, or generic unnamed Yorkies/cats.",
+    "The story should feel like visual comic comedy, not a pleasant greeting card scene.",
+    "Each idea must be easy to turn into four 1:1 comic panels.",
+    "Keep dialogue short enough for readable comic bubbles.",
+    "Avoid repeating obvious recent topics, titles, punchlines, locations, and props.",
+    "Bootsie Belle should often deliver the final witty line, unless Honey Bear's panic creates a stronger punchline.",
+    "Use Southern flavor without making every story about sweet tea.",
+    "Prefer one clear gag per story."
+  ],
   "panel_structure": {
-    "panel_1": "setup",
-    "panel_2": "escalation",
-    "panel_3": "complication",
-    "panel_4": "punchline"
-  }
+    "1": "Setup: establish location, problem, or temptation.",
+    "2": "Escalation: Honey Bear overreacts or Bootsie notices the flaw.",
+    "3": "Complication: the situation becomes visually absurd.",
+    "4": "Punchline: clean visual payoff and witty final line."
+  },
+  "dialogue_rules": [
+    "One or two short speech bubbles per panel is preferred.",
+    "Do not write long monologues.",
+    "Make speech bubble text image-generator friendly.",
+    "Use punctuation naturally, no ellipses."
+  ],
+  "banned_patterns": [
+    "Do not title multiple stories the same thing.",
+    "Do not generate another Sweet Tea Showdown unless directly requested.",
+    "Do not introduce generic side pets in place of Honey Bear and Bootsie Belle.",
+    "Do not make every panel characters sitting and chatting."
+  ]
 }

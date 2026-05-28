@@ -1,22 +1,53 @@
 {
-  "Honey Bear": {
-    "species": "Yorkshire Terrier",
-    "traits": [
-      "dramatic",
-      "protective",
-      "food obsessed",
-      "bossy",
-      "territorial"
-    ]
-  },
-  "Bootsie Belle": {
-    "species": "Tuxedo Cat",
-    "traits": [
-      "elegant",
-      "sarcastic",
-      "Southern belle",
-      "calm",
-      "witty"
-    ]
+  "series": "Sisters of Summerville",
+  "visual_style": [
+    "flat 2D comic style",
+    "bold clean outlines",
+    "minimal cel shading",
+    "bright readable compositions",
+    "no photorealism",
+    "no texture or grain"
+  ],
+  "characters": {
+    "Honey Bear": {
+      "species": "Yorkshire Terrier",
+      "appearance": "small simplified teddy-bear Yorkie with pink bow and pink collar",
+      "absolute_rules": [
+        "Honey Bear is the only main pet character who wears a bow",
+        "Honey Bear should not be replaced with a generic Yorkie",
+        "Honey Bear is not a human"
+      ],
+      "personality": [
+        "dramatic",
+        "bossy",
+        "food obsessed",
+        "protective",
+        "territorial",
+        "overconfident until startled",
+        "treats small household problems like historic emergencies"
+      ],
+      "voice": "fast, emotional, funny overreactions with Northern transplant energy",
+      "comedy_function": "creates chaos, panics, protects snacks, misreads situations"
+    },
+    "Bootsie Belle": {
+      "species": "black and white tuxedo cat",
+      "appearance": "sleek tuxedo cat with red collar and gold bell",
+      "absolute_rules": [
+        "Bootsie Belle never wears a bow",
+        "Bootsie Belle should not be replaced with a generic tuxedo cat",
+        "Bootsie Belle is not a human"
+      ],
+      "personality": [
+        "elegant",
+        "calculating",
+        "dryly sarcastic",
+        "Southern belle",
+        "calm voice of reason",
+        "witty",
+        "secretly dramatic but too dignified to admit it"
+      ],
+      "voice": "polished Southern sass with graceful judgment",
+      "comedy_function": "lands elegant one-liners, critiques chaos, acts dignified in absurd situations"
+    }
   }
 }

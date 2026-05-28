@@ -1,6 +1,20 @@
 [
   {
-    "id": "example-001",
-    "fact": "Summerville is known as the Birthplace of Sweet Tea."
+    "id": "sc-001",
+    "topic": "sweetgrass baskets",
+    "fact": "Sweetgrass basket making is a long-standing Lowcountry craft associated with Gullah Geechee cultural traditions.",
+    "story_angle": "Bootsie Belle treats a basket like a museum artifact while Honey Bear sees it as suspiciously snack-sized."
+  },
+  {
+    "id": "sc-002",
+    "topic": "humid summers",
+    "fact": "South Carolina summers are known for heat, humidity, sudden thunderstorms, and relentless mosquitoes.",
+    "story_angle": "Honey Bear declares weather a personal insult while Bootsie Belle remains elegant under pressure."
+  },
+  {
+    "id": "sc-003",
+    "topic": "Lowcountry food",
+    "fact": "Lowcountry food traditions include seafood, barbecue, rice dishes, peaches, okra, and backyard gatherings.",
+    "story_angle": "Honey Bear becomes unofficial food inspector while Bootsie Belle critiques her lack of manners."
   }
 ]

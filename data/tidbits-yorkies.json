@@ -1,6 +1,20 @@
 [
   {
     "id": "yorkie-001",
-    "fact": "Yorkies are highly territorial and protective."
+    "topic": "protective instincts",
+    "fact": "Yorkshire Terriers are small dogs often known for boldness, alertness, and protective behavior.",
+    "story_angle": "Honey Bear assigns herself security chief over ridiculous threats."
+  },
+  {
+    "id": "yorkie-002",
+    "topic": "big personality",
+    "fact": "Yorkies are tiny but often act confident, energetic, and larger than life.",
+    "story_angle": "Honey Bear treats tiny victories like military campaigns."
+  },
+  {
+    "id": "yorkie-003",
+    "topic": "vocal behavior",
+    "fact": "Yorkies can be vocal and quick to alert their family when something changes.",
+    "story_angle": "Honey Bear sounds the alarm over harmless household details."
   }
 ]
