@@ -1,79 +1,128 @@
+import argparse
 import json
 import os
 import random
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
 from openai import OpenAI
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+from common import read_json, write_json, story_to_text, make_slug
+from similarity_check import find_similar_story
 
-stories_path = Path("stories.json")
-captions_path = Path("captions.json")
+client = OpenAI()
 
-with open(stories_path, "r", encoding="utf-8") as f:
-    stories = json.load(f)
+def load_tidbits():
+    tidbits = []
+    for file in [
+        "data/tidbits-south-carolina.json",
+        "data/tidbits-summerville.json",
+        "data/tidbits-yorkies.json",
+        "data/tidbits-tuxedo-cats.json",
+    ]:
+        items = read_json(file, [])
+        for item in items:
+            item["source_file"] = file
+            tidbits.append(item)
+    return tidbits
 
-with open(captions_path, "r", encoding="utf-8") as f:
-    captions = json.load(f)
+def load_context():
+    return {
+        "character_rules": read_json("data/character-rules.json", {}),
+        "story_rules": read_json("data/story-rules.json", {}),
+        "topic_pools": read_json("data/topic-pools.json", {}),
+        "seasonal_topics": read_json("data/seasonal-topics.json", {})
+    }
 
-with open("data/character-rules.json", "r", encoding="utf-8") as f:
-    character_rules = json.load(f)
+def existing_title_set(stories):
+    return {s.get("title", "").strip().lower() for s in stories if s.get("title")}
 
-with open("data/story-rules.json", "r", encoding="utf-8") as f:
-    story_rules = json.load(f)
+def select_inspiration(tidbits, context):
+    selected_tidbits = random.sample(tidbits, min(5, len(tidbits)))
+    local = random.sample(context["topic_pools"].get("local_flavor", []), 2)
+    pet = random.sample(context["topic_pools"].get("pet_behavior", []), 2)
+    engine = random.sample(context["topic_pools"].get("comic_engines", []), 2)
+    return selected_tidbits, local, pet, engine
 
-tidbit_files = [
-    "data/tidbits-south-carolina.json",
-    "data/tidbits-summerville.json",
-    "data/tidbits-yorkies.json",
-    "data/tidbits-tuxedo-cats.json"
-]
+def coerce_story(story):
+    story.setdefault("title", "Untitled SoS Story")
+    story.setdefault("themes", [])
+    story.setdefault("characters", ["Honey Bear", "Bootsie Belle"])
+    story.setdefault("panels", [])
+    fixed_panels = []
+    for i in range(1, 5):
+        panel = story["panels"][i-1] if i-1 < len(story["panels"]) else {}
+        fixed_panels.append({
+            "panel": i,
+            "scene": panel.get("scene", f"Panel {i} scene."),
+            "dialogue": panel.get("dialogue", [])
+        })
+    story["panels"] = fixed_panels
+    story["characters"] = ["Honey Bear", "Bootsie Belle"]
+    return story
 
-tidbits = []
-
-for file in tidbit_files:
-    if Path(file).exists():
-        with open(file, "r", encoding="utf-8") as f:
-            tidbits.extend(json.load(f))
-
-recent_captions = []
-
-for c in captions[-25:]:
-    if isinstance(c, dict):
-        recent_captions.append(c.get("caption", ""))
-
-def generate_story(index):
-    selected_tidbits = random.sample(tidbits, min(3, len(tidbits)))
-
-    tidbit_text = "\n".join([
-        f"- {t.get('fact', '')}" for t in selected_tidbits
-    ])
-
-    recent_text = "\n".join(recent_captions)
+def generate_candidate(context, tidbits, existing_titles):
+    selected_tidbits, local, pet, engine = select_inspiration(tidbits, context)
 
     prompt = f"""
-Write a Sisters of Summerville comic strip.
+You are the story editor for the Sisters of Summerville comic strip.
 
-Use:
-- Southern humor
-- Honey Bear and Bootsie Belle
-- Summerville flavor
-- 4 clear comic panels
+SERIES CANON:
+{json.dumps(context["character_rules"], indent=2)}
 
-Avoid repeating these stories:
-{recent_text}
+STORY RULES:
+{json.dumps(context["story_rules"], indent=2)}
 
-Research tidbits:
-{tidbit_text}
+RANDOMIZED INSPIRATION:
+Local flavor: {local}
+Pet behavior: {pet}
+Comic engines: {engine}
 
-Return ONLY valid JSON.
+RESEARCH TIDBITS:
+{json.dumps(selected_tidbits, indent=2)}
 
+EXISTING TITLES TO AVOID:
+{sorted(list(existing_titles))[-80:]}
+
+Write ONE original, fully developed 4-panel comic idea.
+
+Hard requirements:
+- Central characters must be Honey Bear and Bootsie Belle.
+- Do not introduce generic substitute pets.
+- Do not use the title Sweet Tea Showdown.
+- Do not make the whole story about sweet tea unless the inspiration clearly demands it.
+- Must be visual and funny, not just polite conversation.
+- Each panel needs a scene description and short dialogue.
+- Keep dialogue bubble-friendly, no long speeches.
+- No ellipses.
+- Return only valid JSON.
+
+JSON shape:
 {{
   "title": "",
   "themes": [],
+  "characters": ["Honey Bear", "Bootsie Belle"],
+  "inspiration_notes": [],
   "panels": [
     {{
       "panel": 1,
+      "scene": "",
+      "dialogue": [
+        {{"character": "Honey Bear", "line": ""}},
+        {{"character": "Bootsie Belle", "line": ""}}
+      ]
+    }},
+    {{
+      "panel": 2,
+      "scene": "",
+      "dialogue": []
+    }},
+    {{
+      "panel": 3,
+      "scene": "",
+      "dialogue": []
+    }},
+    {{
+      "panel": 4,
       "scene": "",
       "dialogue": []
     }}
@@ -82,36 +131,88 @@ Return ONLY valid JSON.
 """
 
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
-        temperature=0.9,
+        model=os.environ.get("OPENAI_STORY_MODEL", "gpt-4.1-mini"),
+        temperature=0.95,
         messages=[
-            {"role":"system","content":"You write Southern comic strips."},
-            {"role":"user","content":prompt}
+            {"role": "system", "content": "You write visual Southern comic-strip scripts with strong continuity discipline."},
+            {"role": "user", "content": prompt}
         ]
     )
 
-    content = response.choices[0].message.content
+    content = response.choices[0].message.content.strip()
+    story = json.loads(content)
+    return coerce_story(story)
 
-    story_json = json.loads(content)
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--count", type=int, default=5)
+    parser.add_argument("--max-attempts", type=int, default=30)
+    parser.add_argument("--similarity-threshold", type=float, default=0.80)
+    args = parser.parse_args()
 
-    return {
-        "id": f"sos-{len(stories)+index+1:04}",
-        "status": "unused",
+    stories = read_json("stories.json", [])
+    context = load_context()
+    tidbits = load_tidbits()
+    titles = existing_title_set(stories)
+
+    approved = []
+    rejected = []
+
+    attempts = 0
+
+    while len(approved) < args.count and attempts < args.max_attempts:
+        attempts += 1
+
+        try:
+            candidate = generate_candidate(context, tidbits, titles)
+        except Exception as e:
+            rejected.append({"reason": f"generation_error: {e}"})
+            continue
+
+        title = candidate.get("title", "").strip()
+        title_key = title.lower()
+
+        if not title or title_key in titles or title_key == "sweet tea showdown":
+            rejected.append({"title": title, "reason": "duplicate_or_banned_title"})
+            continue
+
+        sim = find_similar_story(candidate, threshold=args.similarity_threshold)
+
+        if sim["is_duplicate"]:
+            rejected.append({
+                "title": title,
+                "reason": "too_similar",
+                "similarity_score": sim["score"],
+                "matches": sim["matches"][:3]
+            })
+            continue
+
+        story_id = f"sos-{len(stories) + len(approved) + 1:04}"
+        candidate["id"] = story_id
+        candidate["slug"] = make_slug(title)
+        candidate["status"] = "unused"
+        candidate["created_at"] = datetime.utcnow().isoformat()
+        candidate["similarity_check"] = {
+            "score": sim["score"],
+            "nearest_matches": sim["matches"][:3]
+        }
+
+        approved.append(candidate)
+        titles.add(title_key)
+
+    stories.extend(approved)
+    write_json("stories.json", stories)
+    write_json("data/last-generation-report.json", {
         "created_at": datetime.utcnow().isoformat(),
-        **story_json
-    }
+        "requested_count": args.count,
+        "approved_count": len(approved),
+        "attempts": attempts,
+        "rejected": rejected[-20:]
+    })
 
-new_stories = []
+    print(f"Approved {len(approved)} stories after {attempts} attempts.")
+    if len(approved) < args.count:
+        print("Warning: fewer stories approved than requested. Check data/last-generation-report.json.")
 
-for i in range(5):
-    try:
-        story = generate_story(i)
-        stories.append(story)
-        new_stories.append(story)
-    except Exception as e:
-        print(e)
-
-with open(stories_path, "w", encoding="utf-8") as f:
-    json.dump(stories, f, indent=2)
-
-print(f"Generated {len(new_stories)} stories.")
+if __name__ == "__main__":
+    main()
